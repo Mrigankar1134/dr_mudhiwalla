@@ -1,0 +1,21 @@
+/* src/components/Footer.css */
+
+.footer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #0D6EFD;
+    color: white;
+    text-align: center;
+  }
+  
+  .footer-button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ffffff;
+    color: #0D6EFD;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  

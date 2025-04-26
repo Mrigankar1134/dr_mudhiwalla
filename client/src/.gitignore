@@ -1,0 +1,10 @@
+# Create .gitignore file with standard Node.js exclusions
+echo "node_modules/
+.DS_Store
+dist/
+.env
+.env.local
+*.log
+.idea/
+.vscode/
+" > .gitignore
