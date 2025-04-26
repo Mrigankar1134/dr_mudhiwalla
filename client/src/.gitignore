@@ -1,10 +1,19 @@
-# Create .gitignore file with standard Node.js exclusions
-echo "node_modules/
-.DS_Store
-dist/
+# .gitignore
+# Dependency directories
+**/node_modules/
+
+# Environment files
 .env
 .env.local
-*.log
+
+# Build directories
+dist/
+build/
+
+# Editor files
 .idea/
 .vscode/
-" > .gitignore
+.DS_Store
+
+# Logs
+*.log
