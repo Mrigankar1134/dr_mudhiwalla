@@ -3,6 +3,7 @@ import './landingpage.css';
 import heroImage from '../assets/image.png'; // Your existing hero image
 import awarenessImage from '../assets/image2.png'; // Add your new image here
 import arrowImage from '../assets/arrow.png'; // Add your new arrow image here
+import TablePosterWeb from '../assets/image3.jpeg';
 
 const LandingPage = () => {
   return (
@@ -54,28 +55,8 @@ const LandingPage = () => {
 
         {/* Right Side */}
         <div className="comparison-right">
-          <div className="comparison-grid">
-            {/* Left Column */}
-            <div className="column">
-              <div className="column-header blue-header">DrMudhiwalla Health Screening Services</div>
-              <div className="box blue-box">Doctor-led team</div>
-              <div className="box">Tailored to Age, Lifestyle, Stress and History</div>
-              <div className="box blue-box">Doctor Reviewed report, One-on-one consultation</div>
-              <div className="box">Engaging, Conversational & Awareness building</div>
-              <div className="box blue-box">Doctor Driven Health partner</div>
-            </div>
-
-            {/* Right Column */}
-            <div className="column">
-              <div className="column-header blue-header">Diagnostic Labs’ Corporate Packages</div>
-              <div className="box blue-box">Technician-led volume driven tests</div>
-              <div className="box">Pre-set test packages. Minimal personalization</div>
-              <div className="box blue-box">Raw lab report (PDF/E-mail). Interpretation DIY/Google</div>
-              <div className="box">Transactional, Clinical report driven</div>
-              <div className="box blue-box">Only Testing vendors</div>
-            </div>
-          </div>
-        </div>
+          <img src={TablePosterWeb} alt="Comparison" className="Comparison-image"/>
+        </div>          
       </div>
     </section>
 
