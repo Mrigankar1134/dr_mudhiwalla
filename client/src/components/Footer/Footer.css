@@ -3,7 +3,7 @@
 .footer {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #0D6EFD;
+    background-color: #5ab4e6;
     color: white;
     text-align: center;
   }
@@ -12,10 +12,16 @@
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
     background-color: #ffffff;
-    color: #0D6EFD;
+    color: #5ab4e6;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
+    transition:background-color 0.3s, color 0.3s;
+      
+  }
+  .footer-button:hover{
+      background-color:#0D6EFD;
+      color: #ffffff;
   }
   
