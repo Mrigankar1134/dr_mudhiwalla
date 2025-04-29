@@ -55,7 +55,7 @@ const LandingPage = () => {
 
         {/* Right Side */}
         <div className="comparison-right">
-          <img src={TablePosterWeb} alt="Comparison" className="Comparison-image"/>
+          <img src={TablePosterWeb} alt="Comparison" className="comparison-image"/>
         </div>          
       </div>
     </section>
