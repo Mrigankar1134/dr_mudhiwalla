@@ -3,7 +3,7 @@ import './landingpage.css';
 import heroImage from '../assets/image.png'; // Your existing hero image
 import awarenessImage from '../assets/image2.png'; // Add your new image here
 import arrowImage from '../assets/arrow.png'; // Add your new arrow image here
-import TablePosterWeb from '../assets/image3.jpeg';
+import TablePosterWeb from '../assets/TablePosterWeb.png';
 
 const LandingPage = () => {
   return (
