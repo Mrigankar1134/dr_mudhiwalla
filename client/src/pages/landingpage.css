@@ -1,550 +1,543 @@
-/* Hero Section */
+/* ─────────────────────────────────────
+   Hero Section
+───────────────────────────────────── */
 .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 5%;
-    background-color: #fff;
-  }
-  
-  .hero-content {
-    max-width: 50%;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2a4365;
-    margin-bottom: 20px;
-  }
-  
-  .hero h1 {
-    font-size: 36px;
-    color: #c53030;
-    margin-bottom: 20px;
-    line-height: 1.2;
-  }
-  
-  .hero h2 {
-    font-size: 28px;
-    color: #2a4365;
-    margin: 25px 0;
-    line-height: 1.3;
-  }
-  
-  .cta-button {
-    background-color: #2a4365;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 18px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: bold;
-    margin: 15px 0;
-  }
-  
-  .hero-subtext {
-    font-size: 16px;
-    color: #4a5568;
-    line-height: 1.6;
-    margin: 20px 0;
-  }
-  
-  .specialty-box {
-    background-color: #ebf8ff;
-    border-left: 4px solid #3182ce;
-    padding: 15px;
-    margin: 25px 0;
-  }
-  
-  .specialty-quote {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2b6cb0;
-    font-style: italic;
-    margin-bottom: 5px;
-  }
-  
-  .specialty-tag {
-    font-size: 14px;
-    color: #4a5568;
-  }
-  
-  .hero-image {
-    max-width: 45%;
-  }
-  
-  .hero-image img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-
- /* Main Section Container */
-/* AwarenessSection.css */
-/* Replace ONLY these styles */
-/* Replace ONLY these styles */
-.awareness-section {
-  position: relative;
-  background-color: #ffffff;
-  padding-top: 80px; /* Adjusted space for wave */
-}
-
-.wave-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 300;
-  background: #5ab4e6;
-  clip-path: path('M0,0 L1200,0 L1200,40 Q900,80 600,40 Q300,0 0,40 Z');
-}
-
-/* Keep ALL other existing CSS exactly as it was */
-.awareness-container {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  z-index: 1;
-}
-
-.awareness-left {
-  flex: 1;
-  padding-right: 2rem;
-}
-
-.left-image {
+  /* added horizontal padding for desktop */
+  padding: 140px 5% 60px;
   width: 100%;
-  max-width: 400px;
-  height: auto;
+  box-sizing: border-box;
 }
 
-.awareness-right {
-  flex: 1;
-  text-align: left;
+.hero-content {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.awareness-right h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #2a4365;
+.hero-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  color: #3eb7ff;
+  margin: 0;
+  letter-spacing: 0.5px;
 }
 
-.awareness-right h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #2a4365;
-}
-
-.awareness-right p {
+.hero-subtext {
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.specialty-box {
+  background: #ebf8ff;
+  border-left: 4px solid #3eb7ff;
+  padding: 20px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.specialty-quote {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: #2b6cb0;
+  font-style: italic;
+  margin: 0 0 8px;
+}
+
+.specialty-tag {
+  font-size: 0.9rem;
   color: #4a5568;
 }
 
-@media (max-width: 768px) {
-  .awareness-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .awareness-left {
-    margin-bottom: 2rem;
-  }
-}
-  
-  /* OursVsTheirs.css */
-.comparison-section {
-    padding: 4rem 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  .comparison-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 2rem;
-  }
-.comparison-image{
-    width: 100%;
-    max-width: 600px;
-    border: 1px solid black;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 8px;
-}
-.comparison-image:hover{
-    tranform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-  
-  .comparison-left {
-    flex: 1;
-    position: relative;
-  }
-  
-  .comparison-left h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-  }
-  
-  .comparison-left p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-  
-  .reality-text {
-    font-weight: bold;
-    margin-top: 2rem;
-  }
-  
-  .arrow-image {
-    margin-top: 1rem;
-    width: 190px;
-    left: 90px;
-    position: relative;
-    background-color: #f9f9f9 ;
-  }
-  
-  .comparison-right {
-    flex: 2;
-  }
-  
-  .comparison-grid {
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .column-header {
-    background-color: #578bbf;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    padding: 1rem;
-    border-radius: 6px 6px 0 0;
-    font-size: 1.2rem;
-  }
-  
-  .box {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    text-align: center;
-    font-size: 1rem;
-    background-color: #ffffff;
-  }
-  
-  .blue-box {
-    background-color: #cceeff;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .comparison-container {
-      flex-direction: column;
-    }
-  
-    .comparison-grid {
-      flex-direction: column;
-    }
-  
-    .arrow-image {
-      width: 80px;
-    }
-  }
-  
-  /* RiskProfiling.css */
-/* Modern Risk Section Styles */
-/* Modern Risk Section with Visual Elements */
-.risk-section {
-  position: relative;
-  background: linear-gradient(135deg, #5ab4e6 0%, #0d6efd 100%);
-  color: white;
-  padding: 100px 0;
-  overflow: hidden;
-  isolation: isolate;
+.cta-button {
+  align-self: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background: #3eb7ff;
+  color: #fff;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(42,67,101,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Wave Design */
-.wave-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(42,67,101,0.3);
+}
+
+.hero-image {
+  max-width: 45%;
+  text-align: right;
+}
+
+.hero-image img {
   width: 100%;
-  height: 100px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* ─────────────────────────────────────
+   Responsive Hero (≤992px)
+───────────────────────────────────── */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding: 60px 0 40px; /* zero side padding on tablet/mobile */
+  }
+  .hero-content,
+  .hero-image {
+    max-width: 100%;
+  }
+  .hero-image {
+    margin-bottom: 40px;
+  }
+}
+
+/* ─────────────────────────────────────
+   Awareness Section
+───────────────────────────────────── */
+.awareness-section {
+  position: relative;
+  margin: 3rem 1rem;
+  background: #ebf8ff;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 10rem 2rem;
+  box-sizing: border-box;
+}
+
+/* Waves at top & bottom */
+.wave-top,
+.wave-bottom {
+  position: absolute;
+  left: 0; right: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
   z-index: 1;
 }
-
-.wave-container svg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.wave-top { top: 0; }
+.wave-bottom { bottom: 0; }
+.wave-top svg,
+.wave-bottom svg {
+  display: block;
   width: 100%;
   height: 100%;
 }
 
-/* Content Container */
-.risk-content {
+/* Two-column layout */
+.awareness-container {
   position: relative;
-  z-index: 3;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Icon Header */
-.risk-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.risk-icon {
-  font-size: 3rem;
-  color: white;
-  background: rgba(255,255,255,0.2);
-  padding: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Text Styling */
-.risk-content h2 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.risk-content h4 {
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 1.4;
-  margin-bottom: 2rem;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.risk-content p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  max-width: 700px;
-  text-align: center;
-}
-
-/* Benefit Cards */
-.risk-benefits {
-  display: flex;
-  gap: 30px;
-  margin: 40px 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.benefit-card {
-  background: rgba(255,255,255,0.1);
-  padding: 25px;
-  border-radius: 15px;
-  width: 200px;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  transition: transform 0.3s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-10px);
-}
-
-.benefit-icon {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: white;
-}
-
-/* Quote Styling */
-.quote {
-  font-style: italic;
-  font-size: 1.4rem;
-  margin-top: 40px;
-  position: relative;
-  padding: 0 40px;
-  text-align: center;
-}
-
-.quote::before,
-.quote::after {
-  content: '"';
-  font-size: 3rem;
-  color: rgba(255,255,255,0.3);
-  position: absolute;
-  line-height: 1;
-}
-
-.quote::before {
-  top: -15px;
-  left: 0;
-}
-
-.quote::after {
-  bottom: -30px;
-  right: 0;
-}
-
-/* CTA Button */
-.risk-cta {
-  margin-top: 40px;
-}
-
-.risk-cta button {
-  background: white;
-  color: #0d6efd;
-  border: none;
-  padding: 15px 40px;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.risk-cta button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .risk-content h2 {
-    font-size: 2rem;
-  }
-  
-  .risk-content h4 {
-    font-size: 1.3rem;
-  }
-  
-  .risk-benefits {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .benefit-card {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-/* Font Import */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500&display=swap');
-
-/* Font Import */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Inter:wght@400;500;600&display=swap');
-
-  /* PreventiveHealth.css */
-.preventive-section {
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+/* Left = the image card */
+.awareness-left {
+  flex: 1;
+}
+.left-image {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Right = the gradient text block */
+.awareness-right {
+  flex: 1;
+}
+.awareness-right h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  background: linear-gradient(135deg, #3eb7ff, #246fb3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+.awareness-right h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px; left: 0;
+  width: 80px; height: 4px;
+  background: #246fb3;
+  border-radius: 2px;
+}
+.awareness-right h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #3eb7ff;
+  padding-left: 12px;
+  margin-bottom: 1rem;
+}
+.awareness-right p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 0.75rem;
+  text-indent: 1em;
+}
+
+/* ─────────────────────────────────────
+   Mobile (<768px) — full-width stack
+───────────────────────────────────── */
+@media (max-width: 767px) {
+  .awareness-section {
+    padding: 4rem 1rem;
+  }
+  .awareness-container {
+    flex-direction: column-reverse;  /* image below text */
+    text-align: center;
+    padding: 0;
+    gap: 1.5rem;
+  }
+  .awareness-right,
+  .awareness-left {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .awareness-right h2 {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+  .awareness-right h2::after {
+    width: 50px;
+    height: 3px;
+    bottom: -5px;
+  }
+  .awareness-right h3 {
+    font-size: 1.25rem;
+    padding-left: 0;
+  }
+  .awareness-right p {
+    font-size: 0.9rem;
+    text-indent: 0.5em;
+  }
+  .left-image {
+    margin: 0 auto;  /* center the image */
+  }
+}
+
+
+/* ─────────────────────────────────────
+   Comparison Section (Ours vs Theirs)
+───────────────────────────────────── */
+.comparison-section {
+  /* reduce top/bottom gap, add horizontal breathing room */
+  padding: 2rem 20px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.comparison-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1350px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* Left column = 40%, vertically centered text */
+.comparison-left {
+  flex: 0 0 40%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.comparison-left h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+
+.comparison-left p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.reality-text {
+  font-weight: 700;
+  color: #2b6cb0;
+  margin-bottom: 1.5rem;
+}
+
+/* Smaller, centered arrow with spacing */
+.arrow-image {
+  display: block;
+  width: 60px;
+  margin: 1rem auto 2rem;
+  transition: transform 0.3s;
+}
+
+.arrow-image:hover {
+  transform: translateX(8px);
+}
+
+/* Right column (table) = 60%, scrollable if too wide */
+.comparison-right {
+  flex: 0 60%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.comparison-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.comparison-image:hover {
+  transform: scale(1.03);
+}
+
+.comparison-left img{
+  width: 200px;
+}
+
+/* ─────────────────────────────────────
+   Responsive: Mobile (<768px)
+───────────────────────────────────── */
+@media (max-width: 767px) {
+  .comparison-container {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    padding-bottom: 0;
+  }
+
+  .comparison-left {
+    text-align: center;
+    margin-bottom: 0;
+    flex: 1 1 100%;
+    padding-bottom: 0;
+  }
+
+  .comparison-left img {
+    width: 30px;
+  }
+
+  .arrow-image {
+    width: 35px;
+    margin: 0 auto 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .comparison-right {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .comparison-image {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+.comparison-section, .comparison-container, .comparison-left{
+  padding-top: 0;
+}
+}
+
+/* ─────────────────────────────────────
+   Risk Profiling & Action Plan Section
+───────────────────────────────────── */
+.risk-section {
+  position: relative;
+  background-color: #ffffff;      /* light pastel blue */
+  padding: 4rem 1.5rem 2rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.wave-container {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.wave-container svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.risk-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  color: #1a202c;
+
+}
+.risk-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.risk-content h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+.risk-content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #4a5568;
+}
+.quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #246fb3;
+  margin: 2rem 0;
+}
+
+/* ─────────────────────────────────────
+   Preventive Health Screenings Section
+───────────────────────────────────── */
+.preventive-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   padding: 5rem 8rem;
-  background: #ffffff;
-  color: #000000;
+  background: rgb(90, 180, 230);
   font-family: 'Poppins', sans-serif;
   gap: 4rem;
 }
-
 .preventive-text {
   flex: 1;
 }
-
 .preventive-text h2 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
   font-weight: 800;
-  margin-bottom: 2rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
   line-height: 1.2;
-  font-family: 'Montserrat', sans-serif;
-  color: #2a4365; /* Added for better contrast */
 }
-
 .preventive-text ul {
-  list-style: none; /* Completely removes bullets */
-  padding-left: 0;
+  padding: 0;
   margin-bottom: 2.5rem;
+  list-style: none;
+  color: #f1f1f1;
 }
-
 .preventive-text ul li {
-  margin-bottom: 1.5rem; /* Slightly increased spacing */
   font-size: 1.25rem;
-  transition: color 0.3s ease;
-  font-weight: 500; /* Added medium weight */
-  position: relative;
-  padding-left: 0; /* Removed bullet space */
+  font-weight: 500;
   line-height: 1.6;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 0;
 }
-
-.preventive-text ul li:hover {
-  color: #5ab4e6;
-}
-
 .screen-button {
-  background-color: #5ab4e6;
-  color: #ffffff;
+  background: #ffffff;
+  color: rgb(90, 180, 230);
   padding: 1rem 2.5rem;
-  border: none;
   border-radius: 50px;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 600;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.4s ease, transform 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.5px; /* Slightly improved readability */
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .screen-button:hover {
-  background-color: #429fd0;
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-
 .preventive-image {
   flex: 1;
   text-align: center;
 }
-
 .preventive-image img {
   max-width: 100%;
   height: auto;
   border-radius: 15px;
-  transition: transform 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.4s;
 }
-
 .preventive-image img:hover {
   transform: scale(1.03);
 }
 
-/* Font import - add this to your main CSS */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;500;700&display=swap');
+/* ─────────────────────────────────────
+   Responsive: Mobile (<768px)
+───────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Risk section text stays top */
+  .risk-section {
+    padding: 2rem 1rem 1rem;
+  }
+  .wave-container {
+    height: 80px;
+  }
+  .risk-content h2 { font-size: 2rem; }
+  .risk-content h4 { font-size: 1.1rem; }
+  .risk-content p  { font-size: 0.95rem; }
+
+  /* Preventive section stacks and hides image */
+  .preventive-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem;
+    gap: 2rem;
+    text-align: center;
+    background: rgb(90, 180, 230);
+  }
+  .preventive-image {
+    display: none;  /* remove image on mobile */
+  }
+  .preventive-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .preventive-text ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  .screen-button {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
