@@ -30,7 +30,7 @@ function ContactPage() {
           </div>
         </div>
         <div className="navbar-link">
-          <a href="main.html" className="back-button">Back to main site</a>
+          <a href="landingpage.js" className="back-button">Back to main site</a>
         </div>
       </nav>
 
