@@ -5,10 +5,14 @@ import awarenessImage from '../assets/image2.png'; // Add your new image here
 import arrowRight from '../assets/toRight.png';
 import arrowDown from '../assets/toBottom.png';
 import TablePosterWeb from '../assets/TablePosterWeb.png';
+import Navbar from '../components/Navbar/Navbar';
+
 
 const LandingPage = () => {
   return (
+    
     <div className="landing-page">
+      <Navbar />
       {/* Existing Hero Section */}
       <section className="hero">
         <div className="hero-content">
@@ -143,6 +147,7 @@ const LandingPage = () => {
         </div>
       </section>
     </div>
+   
   );
 };
 

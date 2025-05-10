@@ -1,40 +1,60 @@
 import React, { useState, useEffect } from 'react';
 import './ContactForm.css';
-import logo from '../assets/HealthcareWhite.png';
 import contactImage from '../assets/Contact.png';
 import arrowIcon from '../assets/arrow_icon.png';
+import Footer from '../components/Footer/Footer';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function ContactPage() {
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    number: '',
+    message: ''
+  });
+
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:5000/api/contact', formData);
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+    }
+  };
+
   useEffect(() => {
     if (submitted) {
       const timer = setTimeout(() => {
-        setSubmitted(false);
-      }, 5000); // 3 seconds
-      return () => clearTimeout(timer); // cleanup
+        navigate('/');
+      }, 2000);
+      return () => clearTimeout(timer);
     }
-  }, [submitted]);
+  }, [submitted, navigate]);
 
   return (
     <>
-      {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-brand">
-          <div className="brand-logo-container">
-            <img src={logo} alt="Healthcare Logo" className="brand-logo" />
-          </div>
+          <img
+            src="/assets/mainLogoLightBG.png"
+            alt="DrMudhiwalla HealthCare"
+            className="navbar-logo"
+          />
         </div>
-        <div className="navbar-link">
-          <a href="landingpage.js" className="back-button">Back to main site</a>
+        <div className="navbar-slogan">
+          <div className="slogan-main">Act Before Heart Attack</div>
         </div>
       </nav>
 
-      {/* Contact Form */}
       <div className="contact-container">
         {submitted && (
           <div className="thank-you-overlay">
@@ -50,23 +70,52 @@ function ContactPage() {
             <h2>Get In Touch</h2>
             <hr />
           </div>
-          <input type="text" name="name" placeholder="Your Name" className="contact-inputs" required />
-          <input type="email" name="email" placeholder="Your Email" className="contact-inputs" required />
-          <input type="tel" name="number" placeholder="Your Phone number" className="contact-inputs" required pattern="[0-9]{10}" title="Please enter a 10-digit phone number" />
-          <textarea name="message" placeholder="Short description about your query" className="contact-inputs" required minLength="10" maxLength="300" />
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Your Name" 
+            className="contact-inputs" 
+            required 
+            onChange={handleChange} 
+          />
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Your Email" 
+            className="contact-inputs" 
+            required 
+            onChange={handleChange} 
+          />
+          <input 
+            type="tel" 
+            name="number" 
+            placeholder="Your Phone number" 
+            className="contact-inputs" 
+            required 
+            pattern="[0-9]{10}" 
+            onChange={handleChange} 
+          />
+          <textarea 
+            name="message" 
+            placeholder="Short Description About Your Query" 
+            className="contact-inputs" 
+            required 
+            minLength="10" 
+            maxLength="300" 
+            onChange={handleChange} 
+          />
           <button type="submit">
             Submit <img src={arrowIcon} alt="" />
           </button>
         </form>
 
         <div className="contact-right">
-          <img src={contactImage} alt="Contact Us" />
+          <img src={contactImage} alt="Contact Us" className="contact-image" />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
 
-export default ContactPage;
-
-
+export default ContactForm;
