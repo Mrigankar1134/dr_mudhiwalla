@@ -1,27 +1,26 @@
-// src/App.jsx
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import LandingPage from './pages/landingpage'; // Corrected import name and path
+import LandingPage from './pages/landingpage';
+import ContactForm from './pages/ContactForm';
+import { Routes, Route, useLocation } from 'react-router-dom'; // ✅ use Routes
 
 const App = () => {
-  const styles = {
-    main: {
-      textAlign: 'center',
-      padding: '20px',
-    },
-  };
+  const location = useLocation();
+  
+  // Footer will only render on the landing page (not on ContactForm)
+  const shouldShowFooter = location.pathname !== '/ContactForm';
 
   return (
     <div>
-      <Navbar />
       
-      {/* Main Content */}
-      <main style={styles.main}>
-        <LandingPage /> {/* Proper component usage with PascalCase */}
+      <main>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/ContactForm" element={<ContactForm />} />
+        </Routes>
       </main>
-
-      <Footer />
+      {shouldShowFooter && <Footer />}  {/* Conditionally render Footer */}
     </div>
   );
 };
