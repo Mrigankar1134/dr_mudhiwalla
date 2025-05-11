@@ -11,6 +11,7 @@ function ContactForm() {
     name: '',
     email: '',
     number: '',
+    company: '',    // ← new field
     message: ''
   });
 
@@ -18,7 +19,10 @@ function ContactForm() {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -33,9 +37,7 @@ function ContactForm() {
 
   useEffect(() => {
     if (submitted) {
-      const timer = setTimeout(() => {
-        navigate('/');
-      }, 2000);
+      const timer = setTimeout(() => navigate('/'), 2000);
       return () => clearTimeout(timer);
     }
   }, [submitted, navigate]);
@@ -70,40 +72,59 @@ function ContactForm() {
             <h2>Get In Touch</h2>
             <hr />
           </div>
-          <input 
-            type="text" 
-            name="name" 
-            placeholder="Your Name" 
-            className="contact-inputs" 
-            required 
-            onChange={handleChange} 
+
+          {/* Name */}
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            className="contact-inputs"
+            required
+            onChange={handleChange}
           />
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Your Email" 
-            className="contact-inputs" 
-            required 
-            onChange={handleChange} 
+
+          {/* Company Name */}
+          <input
+            type="text"
+            name="company"
+            placeholder="Your Company Name"
+            className="contact-inputs"
+            required
+            onChange={handleChange}
           />
-          <input 
-            type="tel" 
-            name="number" 
-            placeholder="Your Phone number" 
-            className="contact-inputs" 
-            required 
-            pattern="[0-9]{10}" 
-            onChange={handleChange} 
+
+          {/* Email */}
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            className="contact-inputs"
+            required
+            onChange={handleChange}
           />
-          <textarea 
-            name="message" 
-            placeholder="Short Description About Your Query" 
-            className="contact-inputs" 
-            required 
-            minLength="10" 
-            maxLength="300" 
-            onChange={handleChange} 
+
+          {/* Phone */}
+          <input
+            type="tel"
+            name="number"
+            placeholder="Your Phone number"
+            className="contact-inputs"
+            required
+            pattern="[0-9]{10}"
+            onChange={handleChange}
           />
+
+          {/* Message */}
+          <textarea
+            name="message"
+            placeholder="Short Description About Your Query"
+            className="contact-inputs"
+            required
+            minLength="10"
+            maxLength="300"
+            onChange={handleChange}
+          />
+
           <button type="submit">
             Submit <img src={arrowIcon} alt="" />
           </button>

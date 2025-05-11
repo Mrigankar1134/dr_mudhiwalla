@@ -5,9 +5,15 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
   try {
-    const { name, email, number, message } = req.body;
+    const { name, email, number, company, message } = req.body;  // ← include company
 
-    const newContact = new Contact({ name, email, number, message });
+    const newContact = new Contact({
+      name,
+      email,
+      number,
+      company,       
+      message
+    });
     await newContact.save();
 
     res.status(201).json({ message: 'Contact saved successfully' });
@@ -15,5 +21,3 @@ router.post('/', async (req, res) => {
     res.status(500).json({ error: 'Failed to save contact' });
   }
 });
-
-export default router;
