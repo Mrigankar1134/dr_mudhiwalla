@@ -438,7 +438,7 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: 5rem 8rem;
-  background: rgb(90, 180, 230);
+  background: rgb(232, 247, 255);
   font-family: 'Poppins', sans-serif;
   gap: 4rem;
 }
@@ -449,7 +449,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
   font-weight: 800;
-  color: #fff;
+  color: #1b3d5b;
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
@@ -457,7 +457,7 @@
   padding: 0;
   margin-bottom: 2.5rem;
   list-style: none;
-  color: #f1f1f1;
+  color: #1b3d5b;
 }
 .preventive-text ul li {
   font-size: 1.25rem;
@@ -468,8 +468,8 @@
   padding-left: 0;
 }
 .screen-button {
-  background: #ffffff;
-  color: rgb(90, 180, 230);
+  background: #1b3d5b;
+  color: #fff;
   padding: 1rem 2.5rem;
   border-radius: 50px;
   font-size: 1.1rem;
@@ -540,4 +540,3 @@
     font-size: 1rem;
   }
 }
-

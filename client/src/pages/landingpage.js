@@ -5,10 +5,14 @@ import awarenessImage from '../assets/image2.png'; // Add your new image here
 import arrowRight from '../assets/toRight.png';
 import arrowDown from '../assets/toBottom.png';
 import TablePosterWeb from '../assets/TablePosterWeb.png';
+import Navbar from '../components/Navbar/Navbar';
+
 
 const LandingPage = () => {
   return (
+    
     <div className="landing-page">
+      <Navbar />
       {/* Existing Hero Section */}
       <section className="hero">
         <div className="hero-content">
@@ -108,7 +112,7 @@ const LandingPage = () => {
         <div className="wave-container">
           <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
             <path
-              fill="#5ab4e6"
+              fill="rgb(232, 247, 255)"
               d="M0,160L60,144C120,128,240,96,360,112C480,128,600,192,720,192C840,192,960,128,1080,90.7C1200,53,1320,43,1380,37.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
             ></path>
           
@@ -143,6 +147,7 @@ const LandingPage = () => {
         </div>
       </section>
     </div>
+   
   );
 };
 
