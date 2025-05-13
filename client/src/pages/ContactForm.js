@@ -46,15 +46,23 @@ function ContactForm() {
     <>
       <nav className="navbar">
         <div className="navbar-brand">
+        <a href="/">
           <img
             src="/assets/mainLogoLightBG.png"
             alt="DrMudhiwalla HealthCare"
             className="navbar-logo"
           />
-        </div>
+        </a>
+      </div>
         <div className="navbar-slogan">
-          <div className="slogan-main">Act Before Heart Attack</div>
-        </div>
+        <div className="slogan-main">Act Before Heart Attack</div>
+        <button
+          className="slogan-cta"
+          onClick={() => navigate('/')}
+        >
+         Back To Home
+        </button>
+      </div>
       </nav>
 
       <div className="contact-container">

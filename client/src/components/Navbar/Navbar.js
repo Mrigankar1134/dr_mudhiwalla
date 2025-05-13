@@ -9,11 +9,13 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <img
-          src="/assets/mainLogoLightBG.png"
-          alt="DrMudhiwalla HealthCare"
-          className="navbar-logo"
-        />
+        <a href="/">
+          <img
+            src="/assets/mainLogoLightBG.png"
+            alt="DrMudhiwalla HealthCare"
+            className="navbar-logo"
+          />
+        </a>
       </div>
       
       <div className="navbar-slogan">

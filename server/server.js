@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import contactRoutes from './Routes/contact';
+import contactRoutes from './Routes/contact.js';
 
 dotenv.config(); // Load env variables
 
