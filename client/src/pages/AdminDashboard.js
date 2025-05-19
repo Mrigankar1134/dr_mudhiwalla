@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import './AdminDashboard.css';
+import API from '../api';
 
 export default function AdminDashboard() {
   const { token } = useContext(AuthContext);
@@ -15,7 +16,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     async function fetchPatients() {
       try {
-        const res = await fetch('/api/patients', {
+        const res = await fetch(API.PATIENTS, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (!res.ok) throw new Error(`Status ${res.status}`);
@@ -73,14 +74,17 @@ export default function AdminDashboard() {
                     <td>{p.email}</td>
                     <td>{p.gender}</td>
                     <td>
-                    <button
-    className="btn"
-    onClick={() =>
-      window.open(`http://localhost:5001/report/html?patient=${p.phone}`, '_blank')
-    }
-  >
-    View Report
-  </button>
+                      <button
+                        className="btn"
+                        onClick={() =>
+                          window.open(
+                            `${process.env.REACT_APP_API_BASE_URL || 'http://localhost:5001/api'.replace('/api', '')}/report/html?patient=${p.phone}`,
+                            '_blank'
+                          )
+                        }
+                      >
+                        View Report
+                      </button>
                     </td>
                   </tr>
                 ))}

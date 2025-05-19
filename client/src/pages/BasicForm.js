@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import indiaFlag from '../assets/indian-flag.png';  // adjust path as needed
 import './BasicForm.css';
-
+import API from '../api'; 
 
 export default function BasicForm() {
   const { token } = useContext(AuthContext);
@@ -49,7 +49,7 @@ export default function BasicForm() {
     };
 
     try {
-      const res = await fetch('http://localhost:5001/api/patients', {
+      const res = await fetch(API.PATIENTS, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
