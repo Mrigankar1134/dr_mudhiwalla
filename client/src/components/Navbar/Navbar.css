@@ -1,67 +1,106 @@
-/* Navbar Styles */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .navbar-brand {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .brand-name {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2a4365; /* Dark blue color */
-  }
-  
-  .brand-subtitle {
-    font-size: 16px;
-    color: #4a5568; /* Gray color */
-    margin-top: -5px;
-  }
-  
+  position: fixed;top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navbar-logo {
+  height: 40px;
+}
+
+/* Default slogan section */
+.navbar-slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slogan-main {
+  font-size: 18px;
+  font-weight: 600;
+  color: #c53030;
+  white-space: nowrap;
+}
+
+.slogan-cta {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #3eb7ff;
+  padding: 5px 15px;
+  border: 2px solid #3eb7ff;
+  border-radius: 20px;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.slogan-cta:hover {
+  background: #3eb7ff;
+  color: #fff;
+}
+
+/* Admin tools section */
+.navbar-admin-tools {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-tool-btn {
+  font-size: 16px;
+  color: #212529;
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.admin-tool-btn:hover {
+  background: #f1f3f5;
+}
+
+.logout-btn {
+  color: #e63946;
+}
+
+.logout-btn:hover {
+  background: rgba(230, 57, 70, 0.1);
+}
+
+/* Push content below the fixed navbar */
+body {
+  padding-top: 70px; /* adjust based on navbar height */
+}
+
+/* Tablet (768px–1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
   .navbar-slogan {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    align-items: center;
   }
-  
   .slogan-main {
-    font-size: 18px;
-    font-weight: 600;
-    color: #c53030; /* Red color for urgency */
+    margin-right: 12px;
   }
-  
+}
+
+/* Mobile (<768px) */
+@media (max-width: 767px) {
+  .slogan-main,
   .slogan-cta {
-    font-size: 16px;
-    font-weight: bold;
-    color: #2a4365; /* Dark blue color */
-    margin-top: 5px;
-    padding: 5px 15px;
-    border: 2px solid #2a4365;
-    border-radius: 20px;
+    display: none;
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      text-align: center;
-      padding: 15px;
-    }
-    
-    .navbar-slogan {
-      align-items: center;
-      margin-top: 15px;
-    }
-    
-    .brand-name, .brand-subtitle {
-      text-align: center;
-    }
+  .navbar-admin-tools {
+    gap: 8px;
   }
+}

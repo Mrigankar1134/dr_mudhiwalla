@@ -1,0 +1,82 @@
+/* src/components/RatingRow.css */
+
+/* Container around each question */
+.rating-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+  
+  /* The question label */
+  .rating-question {
+    font-size: 1rem;
+    color: #1b3d5b;
+    margin-bottom: 12px;
+    font-weight: 500;
+    text-align: left;
+  }
+  
+  /* The row of buttons */
+  .rating-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  /* Base styling for every button */
+  .rating-btn {
+    flex: 1;
+    padding: 10px 5px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background: #f0f6f7;      /* neutral background for all */
+    color: #334e68;           /* neutral text */
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 
+      background 0.2s ease, 
+      border-color 0.2s ease, 
+      color 0.2s ease,
+      transform 0.1s ease;
+  }
+  
+  /* Hover states */
+  .rating-btn:hover {
+    background: #e0eaf1;      /* a subtle lift on hover */
+  }
+  
+  /* Selected state: accent background + white text + border */
+  .rating-btn.selected {
+    background: #2a9d8f;      /* your brand accent */
+    color: #ffffff;
+    border-color: #23827c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  }
+  
+  /* Active (pressed) state */
+  .rating-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* If you want equal min-width on mobile */
+  @media (max-width: 480px) {
+    .rating-btn {
+      font-size: 0.8rem;
+      padding: 10px 0;
+      min-width: 60px;
+    }
+  }
+
+  .clear-all {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #2a9d8f;
+    cursor: pointer;
+    text-decoration: underline;
+    text-align: right;
+  }
+  
+  .clear-all:hover {
+    color: #1a7c6b;
+  }

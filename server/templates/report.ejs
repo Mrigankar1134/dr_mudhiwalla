@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Risk Report</title>
+
+  <!-- force all relative URLs to come from /report-static -->
+  <base href="/report-static/">
+
+  <!-- report CSS -->
+  <link rel="stylesheet" href="css/report.css">
+
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo-title">
+        <!-- with <base>, this resolves to /report-static/logo/logo.png -->
+        <img src="logo/logo.png" class="logo-img" alt="DrMudhiwalla Logo">
+      </div>
+      <div class="test-date-and-time">
+        <div class="test-date">
+          <span>Test Date:</span>
+          <span><%= testDate %></span>
+        </div>
+        <div class="test-time">
+          <span>Test Time:</span>
+          <span><%= testTime %></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="white-line"></div>
+
+    <!-- Overall Person + Risk -->
+    <div class="person-overall">
+        <div class="person-detail">
+            <div class="person-name">
+              <h1><%= name.toUpperCase() %></h1>
+            </div>
+            <div class="age-gender">
+              <span class="gender"><%= gender %></span>,
+              <span class="age"><%= age %> yrs</span>
+            </div>
+            <div class="height-weight">
+              <!-- HEIGHT -->
+              <div class="height">
+                <div class="row-one-height">
+                  <div class="height-img">
+                    <img src="/report-static/icons/height.png" alt="Height">
+                  </div>
+                  <div class="height-text">
+                    <!-- ✏️ Render the actual height value -->
+                    <span><%= height %></span><span>cm</span>
+                  </div>
+                </div>
+                <div class="row-two-height">
+                  <div class="height-label">HEIGHT</div>
+                </div>
+              </div>
+        
+              <div class="separator"></div>
+        
+              <!-- WEIGHT -->
+              <div class="weight">
+                <div class="row-one-weight">
+                  <div class="weight-img">
+                    <img src="/report-static/icons/weight.png" alt="Weight">
+                  </div>
+                  <div class="weight-text">
+                    <!-- ✏️ Render the actual weight value -->
+                    <span><%= weight %></span><span>kg</span>
+                  </div>
+                </div>
+                <div class="row-two-weight">
+                  <div class="weight-label">WEIGHT</div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <div class="risk-score">
+        <div class="risk-title">POTENTIAL RISK</div>
+        <svg class="gauge-svg" viewBox="0 0 200 100">
+            <defs>
+              <linearGradient id="riskGrad">
+                <stop offset="0%"   stop-color="#2a9d8f"/>
+                <stop offset="50%"  stop-color="#e9c46a"/>
+                <stop offset="100%" stop-color="#e76f51"/>
+              </linearGradient>
+            </defs>
+          
+            <!-- full rainbow gradient arc -->
+            <path
+              d="M10,100 A90,90 0 0,1 190,100"
+              fill="none"
+              stroke="url(#riskGrad)"
+              stroke-width="16"
+              stroke-linecap="round" />
+          
+            <!-- pivot dot -->
+            <circle cx="100" cy="100" r="4" class="gauge-pivot" />
+          
+            <!-- needle: rotate it based on riskScore -->
+            <line
+              x1="100" y1="100"
+              x2="10"  y2="100"
+              class="gauge-needle"
+              transform="rotate(<%= (riskScore/5)*180 %> 100 100)" />
+          </svg>
+        <div class="risk-value"><%= riskScore %> / 5</div>
+        <div class="gauge-legend">
+          <span class="legend-low">LOW</span>
+          <span class="legend-high">HIGH</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Individual Factors -->
+    <div class="individual-scores">
+      <div class="scores-grid">
+        <% factors.forEach(f => { %>
+          <div class="score-card">
+            <img src="icons/<%= f.icon %>.png" class="score-icon" alt="<%= f.name %>">
+            <div class="score-content">
+              <div class="score-name"><%= f.name.toUpperCase() %></div>
+              <div class="score-value"><%= f.value %></div>
+              <span class="score-badge <%= f.statusClass %>"><%= f.statusLabel.toUpperCase() %></span>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="recommendations-section">
+      <div class="section-title">KEY RECOMMENDATIONS</div>
+      <div class="recommendations-list">
+        <% recommendations.forEach(rec => { %>
+          <div class="recommendation-item">
+            <img src="icons/check.png" class="rec-icon" alt="✓" />
+            <span class="rec-text"><%= rec %></span>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <div class="white-line"></div>
+
+    <!-- Footer Contact -->
+    <div class="footer-contact">
+      <div class="contact-details">
+        <a href="https://www.drmudhiwalla.com" target="_blank">www.drmudhiwalla.com</a>
+        <span>+91 98765 43210</span>
+        <a href="mailto:info@drmudhiwaliahc.com">info@drmudhiwaliahc.com</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+# Root files
+.env
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+
+# Build outputs
+build/
+dist/
+out/
+
+# VSCode & IDE settings
+.vscode/
+.idea/
+
+# React client
+client/node_modules/
+client/.env
+client/build/
+client/.DS_Store
+client/.cache/
+client/.eslintcache
+
+# Server
+server/node_modules/
+server/.env
+server/build/
+server/.DS_Store
+
+# Logs
+logs
+*.log
+*.gz
+
+# Coverage reports
+coverage/
+
+# System files
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Mac system files
+*.DS_Store
