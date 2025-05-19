@@ -1,0 +1,181 @@
+/* src/components/BasicForm.css */
+
+/* 1) Global box-sizing so widths include padding/borders */
+html, *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2) Form card */
+.basic-form {
+  max-width: 600px;
+  margin: 40px auto 20px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.basic-form h2 {
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  color: #1b3d5b;
+}
+
+/* 3) Standard fields */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.field-group label {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #334e68;
+  font-weight: 500;
+  text-align: left;   /* ← add this */
+}
+.field-group input,
+.field-group select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid #d1d9de;
+  border-radius: 6px;
+  background: #f7fafc;
+  transition: border-color 0.2s;
+}
+.field-group input:focus,
+.field-group select:focus {
+  border-color: #2a9d8f;
+  outline: none;
+}
+
+/* 4) Two-column rows */
+.field-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.field-row .small {
+  flex: 1;
+}
+
+/* 5) PHONE input: two-box split */
+.phone-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.country-code {
+  flex: 0 0 50px;
+  padding: 11.5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef6f7;
+  border: 1px solid #d1d9de;
+  border-right: none;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.country-code img {
+  width: 20px;
+  height: auto;
+  margin-right: 4px;
+}
+.phone-input input {
+  flex: 1;
+  border: 1px solid #d1d9de;
+border-top-left-radius: 0;
+border-bottom-left-radius: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  background: #f7fafc;
+}
+
+/* 6) Navigation buttons (Back / Next / Submit) */
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  align-items: center;
+}
+.nav-btn {
+  padding: 10px 24px;
+  font-size: 1rem;
+  color: #666;
+  background: #f0f0f0;
+  border: 1px solid #c4c4c4;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.nav-btn.primary {
+  background: #2a9d8f;
+  color: #fff;
+  border-color: #23827c;
+}
+.nav-btn.primary:hover:not(:disabled) {
+  background: #23827c;
+}
+
+/* 7) Mobile adjustments */
+@media (max-width: 600px) {
+  /* Keep the code + input side-by-side */
+  .phone-input {
+    flex-direction: row;
+  }
+
+  /* Tweak the rounded corners back to a joined pill */
+  .country-code {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+  }
+  .phone-input input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .basic-form {
+    margin: 10px auto;
+    padding: 16px;
+  }
+  .field-row {
+    flex-direction: column;
+  }
+  .form-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .nav-btn {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  
+}
+
+.radio-group {
+  display: flex;
+  gap: 16px;
+}
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1rem;
+  color: #334e68;
+}
+.radio-group input[type="radio"] {
+  width: auto;
+}

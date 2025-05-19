@@ -1,0 +1,373 @@
+/* public/css/report.css */
+* {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* A4 & print setup */
+@page { size: A4 portrait; margin: 10mm; }
+html, body {
+  margin: 0;
+  padding: 0;
+  /* remove height: 297mm; */
+}
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #e6f6fc; color: #1b3d5b }
+
+/* Container */
+.container {
+  /* A4 width minus left+right margins (20 mm total) */
+  width:  calc(210mm - 10mm);
+  /* A4 height minus top+bottom margins (20 mm total) */
+  height: calc(297mm - 10mm);
+
+  margin: 0 auto;   /* now you’re centering within the printable area */
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-title {
+  margin-left: 5mm;
+  max-width: 58mm;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.white-line{
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+}
+.person-overall {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.person-detail {
+    width: 50%;
+}
+
+.risk-score {
+    width: 50%;
+    text-align: right; /* Optional: Align text to the right */
+}
+
+.person-detail h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+.height, .weight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Center content horizontally */
+    text-align: center;
+    justify-content: flex-end; /* Align content to the top */
+    height: 100%; /* Ensure consistent height for alignment */
+    gap: 10px; /* Add consistent spacing between elements */
+}
+
+.row-one-height, .row-one-weight {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.height-img img, .weight-img img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+}
+
+.height-text span, .weight-text span {
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #2c3e50; /* Adjust color as needed */
+    line-height: 1; /* Ensure consistent line height */
+}
+
+.row-two-height .height-label, .row-two-weight .weight-label {
+    font-size: 16px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #7f8c8d; /* Adjust color as needed */
+    margin-top: 0; /* Remove extra margin */
+    align-self: center; /* Center the label horizontally */
+}
+
+.height-weight {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;   /* ⬅️ align kids to the bottom edge */
+    margin-top: 20px;
+    gap: 20px;
+    background: none;        /* no background */
+  }
+  
+  .separator {
+    width: 2px;
+    height: 80px;
+    background-color: #ccc;
+    align-self: flex-end;    /* ⬅️ pin the separator to the bottom too */
+    display: block;
+  }
+
+  /* Container styling (bottom-align if in a flex parent) */
+.risk-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+  
+  /* Title above gauge */
+  .risk-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 4px;
+  }
+  
+  /* Gauge size */
+  .gauge-svg {
+    width: 60mm;
+    height: auto;
+    overflow: visible;
+  }
+  
+  /* Subtle background arc */
+  .gauge-bg {
+    opacity: 0.4;
+  }
+  
+  /* Animated fill */
+  .gauge-fill {
+    transition: stroke-dashoffset 0.6s ease-out;
+  }
+  
+  /* Needle pivot dot */
+  .gauge-pivot {
+    fill: #1d2d44;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+  }
+  
+  /* Needle styling */
+  .gauge-needle {
+    stroke: #1d2d44;
+    stroke-width: 4;
+    stroke-linecap: round;
+    transition: transform 0.6s ease-out;
+  }
+  
+  /* Numeric display below */
+  .risk-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1d2d44;
+    margin-top: 4px;
+  }
+
+  /* Legend under the gauge */
+.gauge-legend {
+    width: 60mm;               /* match your gauge width */
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #555;
+    margin-top: 4px;
+  }
+  
+  /* Optional subtle styling */
+  .legend-low,
+  .legend-high {
+    user-select: none;
+  }
+
+  /* Individual Scores Grid */
+.individual-scores {
+    margin-top: 10px;
+  }
+  
+  /* Two-column layout */
+  .scores-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  /* Card styling */
+  .score-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 12px;
+  }
+  
+  /* Icon size */
+  .score-icon {
+    width: 16mm;
+    height: auto;
+  }
+  
+  /* Text block */
+  .score-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  /* Metric name */
+  .score-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2d44;
+  }
+  
+  /* Metric value */
+  .score-value {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  /* Status badge */
+  .score-badge {
+    display: inline-block;
+    min-width: 30mm;        /* ensures all badges are at least this wide */
+    padding: 4px 0;         /* only vertical padding now */
+    text-align: center;     /* center the label */
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 4px;
+  }
+  /* Reuse your existing status colors via classes */
+  .score-badge.green  { background: #2a9d8f; }
+  .score-badge.yellow { background: #e9c46a; }
+  .score-badge.orange { background: #f4a261; }
+  .score-badge.red    { background: #e76f51; }
+
+  /* Test date/time styling in header */
+.test-date-and-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;   /* Push both date and time to the right */
+    margin-left: auto;       /* Ensure this block hugs the right edge */
+    font-size: 8pt;          /* A smaller, unobtrusive size */
+    color: #334E68;          /* A slightly muted but readable color */
+  }
+  
+  .test-date-and-time .test-date,
+  .test-date-and-time .test-time {
+    margin: 0;               /* Remove default margins */
+    padding: 2px 0;          /* A little vertical breathing room */
+  }
+  
+  .test-date-and-time span:first-child {
+    font-weight: 600;        /* Make the “Test Date:” / “Test Time:” labels stand out */
+    margin-right: 4px;       /* Small gap before the dynamic value */
+  }
+
+  /* Recommendations Section (refreshed) */
+.recommendations-section {
+    margin-top: 8px;                    /* tighter spacing */
+    background: #fff;                    /* crisp white */
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  
+  /* Section title */
+  .recommendations-section .section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2d44;
+    margin-bottom: 12px;
+  }
+  
+  /* Grid of items */
+  .recommendations-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 24px;
+  }
+  
+  /* Recommendation row: center icon & text vertically */
+.recommendation-item {
+    display: flex;
+    align-items: center;   /* was flex-start */
+    gap: 8px;
+  }
+  
+  /* Remove any manual offset on the icon */
+  .rec-icon {
+    width: 6mm;
+    height: auto;
+    margin: 0;             /* clear that old top margin */
+  }
+  
+  /* Text */
+  .rec-text {
+    font-size: 12px;
+    color: #333;
+    line-height: 1.4;
+  }
+
+  /* Ensure the container is a column-flex so margin-top:auto pushes footer to bottom */
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Footer block */
+  .footer-contact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* push contents to the right */
+    gap: 8px;
+    margin-top: auto;           /* push this block to the very bottom */
+    padding-top: 12px;          /* small breathing room above */
+  }
+  
+  /* Contact text styling */
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* right-align text */
+    font-size: 10px;
+    color: #1b3d5b;
+    line-height: 1.3;
+  }
+  
+  .contact-details a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  
+  .contact-details span {
+    margin-bottom: 2px;
+  }
+
+
+/* Print tweaks */
+@media print {
+  .recommendations { page-break-inside: avoid; }
+  @page { size: A4 portrait; margin: 5mm; }
+}

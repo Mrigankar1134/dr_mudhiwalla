@@ -6,13 +6,16 @@ import arrowRight from '../assets/toRight.png';
 import arrowDown from '../assets/toBottom.png';
 import TablePosterWeb from '../assets/TablePosterWeb.png';
 import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
+import { useNavigate } from 'react-router-dom';
 
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
-    
+    <>
+    <Navbar />
     <div className="landing-page">
-      <Navbar />
       {/* Existing Hero Section */}
       <section className="hero">
         <div className="hero-content">
@@ -25,7 +28,7 @@ const LandingPage = () => {
             <p className="specialty-quote">"Screening and Risk Profiling"</p>
             <p className="specialty-tag">~ our speciality</p>
           </div>
-          <button className="cta-button">Screen Now</button>
+          <button className="cta-button" onClick={() => navigate('/ContactForm')}>Screen Now</button>
         </div>
         <div className="hero-image">
           <img src={heroImage} alt="Health screening professionals at work" />
@@ -138,7 +141,7 @@ const LandingPage = () => {
             <li>At your comfort</li>
             <li>At your convenience</li>
           </ul>
-          <button className="screen-button">Screen Now</button>
+          <button className="screen-button" onClick={() => navigate('/ContactForm')}>Screen Now</button>
         </div>
 
         {/* Right Side Image */}
@@ -147,7 +150,8 @@ const LandingPage = () => {
         </div>
       </section>
     </div>
-   
+    <Footer />
+    </>
   );
 };
 

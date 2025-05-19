@@ -519,7 +519,7 @@
     padding: 2.5rem 1rem;
     gap: 2rem;
     text-align: center;
-    background: rgb(90, 180, 230);
+    background: rgb(232, 247, 255);
   }
   .preventive-image {
     display: none;  /* remove image on mobile */
