@@ -5,8 +5,8 @@ import awarenessImage from '../assets/image2.png'; // Add your new image here
 import arrowRight from '../assets/toRight.png';
 import arrowDown from '../assets/toBottom.png';
 import TablePosterWeb from '../assets/TablePosterWeb.png';
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 
 

@@ -1,9 +1,9 @@
 // src/pages/AdminDashboard.js
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 import './AdminDashboard.css';
-import API from '../api';
+import API from '../../api';
 
 export default function AdminDashboard() {
   const { token } = useContext(AuthContext);

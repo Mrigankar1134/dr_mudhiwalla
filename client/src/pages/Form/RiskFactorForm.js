@@ -1,11 +1,11 @@
 // src/components/LifestyleForm.jsx
 import React, { useState, useContext } from 'react';
 import indiaFlag from '../assets/indian-flag.png';
-import RatingRow from '../components/RatingRow/RatingRow';
+import RatingRow from '../../components/RatingRow/RatingRow';
 import './RiskFactorsForm.css';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import API from '../api';    // ← add this
+import API from '../../api';    // ← add this
 
 export default function LifestyleForm() {
   const { token } = useContext(AuthContext);

@@ -1,9 +1,9 @@
 // src/pages/Login.jsx
 import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '../context/AuthContext'
+import { AuthContext } from '../../context/AuthContext'
 import './Login.css'
-import API from '../api'
+import API from '../../api'
 
 export default function Login() {
   const [phone, setPhone] = useState('')

@@ -8,7 +8,6 @@
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .navbar-content {
@@ -190,7 +189,7 @@
   justify-content: center;
   padding: 0.5rem 1rem;
   margin-top: 80px;
-  background-color: #2a9d8f;
+  background-color: #3eb7ff;
   color: #ffffff;
   border: none;
   border-radius: 0.5rem;
@@ -203,13 +202,13 @@
 
 /* Hover state */
 .back-button:hover {
-  background-color: #23827c;
+  background-color: #52bbf8;
   transform: translateY(-2px);
 }
 
 /* Active/click state */
 .back-button:active {
-  background-color: #216f6c;
+  background-color: #3eb7ff;
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -251,7 +250,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding: 50px 0 100px 0;
+    padding: 100px 0 100px 0;
   }
   .contact-left {
     width: 45%;

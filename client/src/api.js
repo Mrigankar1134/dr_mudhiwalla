@@ -1,5 +1,5 @@
 // src/api.js
-const BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5001/api';
+const BASE = process.env.REACT_APP_API_BASE_URL || 'REACT_APP_API_BASE_URL=https://drmudhiwalla.com/api';
 
 const API = {
     AUTH_LOGIN: `${BASE}/auth/login`,

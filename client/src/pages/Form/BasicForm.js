@@ -1,10 +1,10 @@
 // src/pages/BasicForm.jsx
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 import indiaFlag from '../assets/indian-flag.png';  // adjust path as needed
 import './BasicForm.css';
-import API from '../api'; 
+import API from '../../api'; 
 
 export default function BasicForm() {
   const { token } = useContext(AuthContext);
