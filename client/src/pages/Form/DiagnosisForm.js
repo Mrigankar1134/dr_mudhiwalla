@@ -2,7 +2,7 @@
 import indiaFlag from '../assets/indian-flag.png'
 
 import React, { useState, useContext } from 'react';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 import './BasicForm.css';  // reuse your existing basic form styles
 import { useNavigate } from 'react-router-dom';
 

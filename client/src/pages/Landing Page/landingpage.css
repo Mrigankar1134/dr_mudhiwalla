@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   /* added horizontal padding for desktop */
-  padding: 140px 5% 60px;
+  padding: 140px 5% 60px !important;
   width: 100%;
   box-sizing: border-box;
 }
@@ -331,6 +331,10 @@
    Responsive: Mobile (<768px)
 ───────────────────────────────────── */
 @media (max-width: 767px) {
+  .hero{
+    padding-top: 50px !important;
+  }
+
   .comparison-container {
     flex-direction: column;
     padding: 2rem 1.5rem;

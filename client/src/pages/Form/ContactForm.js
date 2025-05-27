@@ -3,10 +3,11 @@ import React, { useState, useEffect } from 'react';
 import './ContactForm.css';
 import contactImage from '../assets/Contact.png';
 import arrowIcon from '../assets/arrow_icon.png';
-import Footer from '../components/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Navbar from '../components/Navbar/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
+import API from '../../api';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5001/api/contact', formData);
+      await axios.post(API.CONTACT, formData);
       setSubmitted(true);
     } catch (err) {
       console.error('Error submitting form:', err);
