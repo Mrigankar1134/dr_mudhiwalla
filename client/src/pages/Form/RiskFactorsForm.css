@@ -1,0 +1,194 @@
+/* src/components/RiskFactorsForm.css */
+/* At the very top */
+html {
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  
+  /* At the very bottom */
+  .page input[type="text"],
+  .page select {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+/* Wizard container */
+.wizard {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 130px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Page content */
+  .page {
+    padding: 32px 24px;
+  }
+  
+  .page h3 {
+    margin: 0 0 12px;
+    font-size: 1.75rem;
+    color: #1b3d5b;
+  }
+  
+  .page p {
+    margin: 0 0 24px;
+    color: #334e68;
+    line-height: 1.6;
+  }
+  
+/* Text & select inputs should fill the container without overflowing */
+.page input[type="text"],
+.page select {      /* full width */
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border: 1px solid #d1d9de;
+  border-radius: 6px;
+  background: #f7fafc;
+  transition: border-color 0.2s;
+  /* box-sizing is now border-box via the global rule */
+}
+
+  .page input[type="text"]:focus,
+  .page select:focus {
+    border-color: #2a9d8f;
+    outline: none;
+  }
+  
+  /* Matrix table styling */
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-family: inherit;
+    /* enforce equal column widths for uniform headers */
+    table-layout: fixed;
+  }
+  
+  
+  /* Header row */
+  .matrix-table thead th {
+    background: #eef6f7;
+    color: #2a9d8f;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 14px 8px;
+    text-align: center;
+  }
+  
+  /* Top-left corner cell blank */
+  .matrix-table thead th:first-child {
+    background: transparent;
+    border: none;
+  }
+  
+  /* Table cells */
+  .matrix-table th,
+  .matrix-table td {
+    border-bottom: 1px solid #e6ebed;
+  }
+  
+  /* Question label cells */
+  .matrix-row-label {
+    text-align: left;
+    color: #1b3d5b;
+    font-weight: 500;
+    padding: 14px 12px;
+    background: #fafbfd;
+  }
+  
+  /* Input cell styling */
+  .matrix-td {
+    padding: 14px 0;
+    text-align: center;
+  }
+  
+  .matrix-td input {
+    width: 1.2em;
+    height: 1.2em;
+    accent-color: #2a9d8f;
+  }
+  
+  /* Zebra striping */
+  .matrix-table tbody tr:nth-child(odd) .matrix-row-label,
+  .matrix-table tbody tr:nth-child(odd) .matrix-td {
+    background: #fafbfd;
+  }
+  
+  /* Row hover highlight */
+  .matrix-table tbody tr:hover .matrix-row-label,
+  .matrix-table tbody tr:hover .matrix-td {
+    background: #eef6f7;
+  }
+  
+  /* Controls bar */
+  .wizard-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #f0f6fb;
+  }
+  
+  .wizard-controls button {
+    padding: 10px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #2a9d8f;
+    color: #ffffff;
+    transition: background 0.2s;
+  }
+  
+  .wizard-controls button:disabled {
+    background: #c4c4c4;
+    cursor: not-allowed;
+  }
+  
+  .wizard-controls button:hover:not(:disabled) {
+    background: #23827c;
+  }
+  
+  /* Progress bar */
+  .progress-bar {
+    height: 6px;
+    background: #e6ebed;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: #2a9d8f;
+    transition: width 0.4s ease;
+  }
+  
+  /* Responsive for mobile */
+  @media (max-width: 600px) {
+    .matrix-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .matrix-table thead,
+    .matrix-table tbody {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .matrix-row-label {
+      min-width: 140px;
+    }
+    .matrix-table thead th:not(:first-child) {
+      min-width: 120px;
+    }
+    .matrix-table td:not(.matrix-row-label) {
+      min-width: 120px;
+    }
+  }
+  

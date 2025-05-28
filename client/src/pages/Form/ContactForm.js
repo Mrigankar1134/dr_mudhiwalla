@@ -1,22 +1,30 @@
+// src/pages/ContactForm.jsx
 import React, { useState, useEffect } from 'react';
 import './ContactForm.css';
 import contactImage from '../assets/Contact.png';
 import arrowIcon from '../assets/arrow_icon.png';
-import Footer from '../components/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Navbar from '../../components/Navbar/Navbar';
+import API from '../../api';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     number: '',
-    company: '',    // ← new field
+    company: '',
     message: ''
   });
 
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
+
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleChange = (e) => {
     setFormData(prev => ({
@@ -28,7 +36,7 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/contact', formData);
+      await axios.post(API.CONTACT, formData);
       setSubmitted(true);
     } catch (err) {
       console.error('Error submitting form:', err);
@@ -44,26 +52,20 @@ function ContactForm() {
 
   return (
     <>
-      <nav className="navbar">
-        <div className="navbar-brand">
-        <a href="/">
-          <img
-            src="/assets/mainLogoLightBG.png"
-            alt="DrMudhiwalla HealthCare"
-            className="navbar-logo"
-          />
-        </a>
-      </div>
-        <div className="navbar-slogan">
-        <div className="slogan-main">Act Before Heart Attack</div>
+      <Navbar />
+
+      {/* Back button */}
+      <div className="back-button-container">
         <button
-          className="slogan-cta"
-          onClick={() => navigate('/')}
+          className="back-button"
+          onClick={() => {
+            navigate('/');
+            window.scrollTo(0, 0);
+          }}
         >
-         Back To Home
+          &larr; Back
         </button>
       </div>
-      </nav>
 
       <div className="contact-container">
         {submitted && (
@@ -81,7 +83,6 @@ function ContactForm() {
             <hr />
           </div>
 
-          {/* Name */}
           <input
             type="text"
             name="name"
@@ -91,7 +92,6 @@ function ContactForm() {
             onChange={handleChange}
           />
 
-          {/* Company Name */}
           <input
             type="text"
             name="company"
@@ -101,7 +101,6 @@ function ContactForm() {
             onChange={handleChange}
           />
 
-          {/* Email */}
           <input
             type="email"
             name="email"
@@ -111,7 +110,6 @@ function ContactForm() {
             onChange={handleChange}
           />
 
-          {/* Phone */}
           <input
             type="tel"
             name="number"
@@ -122,7 +120,6 @@ function ContactForm() {
             onChange={handleChange}
           />
 
-          {/* Message */}
           <textarea
             name="message"
             placeholder="Short Description About Your Query"
@@ -139,7 +136,11 @@ function ContactForm() {
         </form>
 
         <div className="contact-right">
-          <img src={contactImage} alt="Contact Us" className="contact-image" />
+          <img
+            src={contactImage}
+            alt="Contact Us"
+            className="contact-image"
+          />
         </div>
       </div>
       <Footer />

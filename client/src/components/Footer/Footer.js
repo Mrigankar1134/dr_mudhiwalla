@@ -1,5 +1,6 @@
 // src/components/Footer.jsx
 import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import {
   Phone,
   Mail,
@@ -7,21 +8,22 @@ import {
 } from 'lucide-react';
 import { FaFacebook, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import './Footer.css';
-import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
-  const navigate = useNavigate(); // ✅ Must be inside the function block
+  const navigate = useNavigate();
 
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Logo & Tagline */}
+        {/* Logo & Tagline (clickable) */}
         <div className="footer-column logo-column">
-          <img
-            src="/assets/mainLogoDarkBG.png"
-            alt="DrMudhiwalla HealthCare Logo"
-            className="footer-logo"
-          />
+          <Link to="/">
+            <img
+              src="/assets/mainLogoDarkBG.png"
+              alt="DrMudhiwalla HealthCare Logo"
+              className="footer-logo"
+            />
+          </Link>
           <p className="tagline">
             Specialized in preventive cardiology and early heart disease detection.
           </p>
@@ -51,10 +53,7 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Take Action</h4>
           <p className="cta-text">“Act Before Heart Attack”</p>
-          <button
-            className="footer-button"
-            onClick={() => navigate('/ContactForm')} // ✅ navigation on button click
-          >
+          <button className="footer-button" onClick={() => { navigate('/ContactForm'); window.scrollTo(0, 0); }}>
             Screen Now
           </button>
         </div>

@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   /* added horizontal padding for desktop */
-  padding: 140px 5% 60px;
+  padding: 140px 5% 60px !important;
   width: 100%;
   box-sizing: border-box;
 }
@@ -66,7 +66,6 @@
   border-radius: 30px;
   box-shadow: 0 8px 20px rgba(42,67,101,0.2);
   transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
 }
 
 .cta-button:hover {
@@ -332,6 +331,10 @@
    Responsive: Mobile (<768px)
 ───────────────────────────────────── */
 @media (max-width: 767px) {
+  .hero{
+    padding-top: 50px !important;
+  }
+
   .comparison-container {
     flex-direction: column;
     padding: 2rem 1.5rem;
@@ -520,7 +523,7 @@
     padding: 2.5rem 1rem;
     gap: 2rem;
     text-align: center;
-    background: rgb(90, 180, 230);
+    background: rgb(232, 247, 255);
   }
   .preventive-image {
     display: none;  /* remove image on mobile */
