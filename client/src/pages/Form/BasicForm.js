@@ -2,7 +2,8 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
-import indiaFlag from '../assets/indian-flag.png';  // adjust path as needed
+import indiaFlag from '../../assets/indian-flag.png';
+
 import './BasicForm.css';
 import API from '../../api'; 
 

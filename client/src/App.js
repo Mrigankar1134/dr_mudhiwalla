@@ -1,16 +1,17 @@
 // src/App.js
 import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import LandingPage from './pages/landingpage';
-import ContactForm from './pages/ContactForm';
-import BasicForm from './pages/BasicForm';
-import DiagnosisForm from './pages/DiagnosisForm';
-import RiskFactorsForm from './pages/RiskFactorForm';
-import Login from './pages/Login';
-import AdminDashboard from './pages/AdminDashboard';
+import LandingPage from './pages/Landing Page/landingpage';
+import ContactForm from './pages/Form/ContactForm';
+import BasicForm from './pages/Form/BasicForm';
+import DiagnosisForm from './pages/Form/DiagnosisForm';
+import RiskFactorsForm from './pages/Form/RiskFactorForm';
+import Login from './pages/Login Page/Login';
+import AdminDashboard from './pages/Admin Dashboard/AdminDashboard';
 import PrivateRoute from './components/PrivateRoute';
 import { AuthContext } from './context/AuthContext';
 import './App.css';
+import Services from './pages/Services/Services';
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -36,6 +37,7 @@ function App() {
           {/* public */}
           <Route path="/login" element={<Login />} />
           <Route path="/ContactForm" element={<ContactForm />} />
+          <Route path="/Services" element={<Services />} />
 
           {/* admin only */}
           <Route

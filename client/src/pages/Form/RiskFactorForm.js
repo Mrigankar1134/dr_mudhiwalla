@@ -1,6 +1,6 @@
 // src/components/LifestyleForm.jsx
 import React, { useState, useContext } from 'react';
-import indiaFlag from '../assets/indian-flag.png';
+import indiaFlag from '../../assets/indian-flag.png';
 import RatingRow from '../../components/RatingRow/RatingRow';
 import './RiskFactorsForm.css';
 import { AuthContext } from '../../context/AuthContext';

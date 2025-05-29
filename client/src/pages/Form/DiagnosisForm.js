@@ -1,5 +1,5 @@
 // src/components/DiagnosisForm.jsx
-import indiaFlag from '../assets/indian-flag.png'
+import indiaFlag from '../../assets/indian-flag.png'
 
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';

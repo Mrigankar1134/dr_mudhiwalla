@@ -1,8 +1,8 @@
 // src/pages/ContactForm.jsx
 import React, { useState, useEffect } from 'react';
 import './ContactForm.css';
-import contactImage from '../assets/Contact.png';
-import arrowIcon from '../assets/arrow_icon.png';
+import contactImage from '../../assets/Contact.png';
+import arrowIcon from '../../assets/arrow_icon.png';
 import Footer from '../../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
